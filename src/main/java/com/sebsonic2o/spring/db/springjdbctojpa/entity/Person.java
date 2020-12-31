@@ -2,14 +2,32 @@ package com.sebsonic2o.spring.db.springjdbctojpa.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Person {
 
+	@Id
+	@GeneratedValue
 	private int id;
+
+	@Column(name="first_name")
 	private String name;
+
 	private String location;
 	private Date birthDate;
 
 	public Person() {}
+
+	public Person(String name, String location, Date birthDate) {
+		super();
+		this.name = name;
+		this.location = location;
+		this.birthDate = birthDate;
+	}
 
 	public Person(int id, String name, String location, Date birthDate) {
 		super();

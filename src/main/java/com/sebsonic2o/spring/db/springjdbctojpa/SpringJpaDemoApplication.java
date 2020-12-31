@@ -26,6 +26,7 @@ public class SpringJpaDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		logger.info("All persons - {}", repo.findAll());
 		logger.info("Person id 10001 - {}", repo.findById(10001));
 		logger.info("Deleting person id 10002");
 		repo.deleteById(10002);

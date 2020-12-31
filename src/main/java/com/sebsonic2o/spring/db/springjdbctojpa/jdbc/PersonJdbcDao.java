@@ -25,4 +25,18 @@ public class PersonJdbcDao {
 				new BeanPropertyRowMapper<Person>(Person.class),
 				id);
 	}
+
+	public int deleteById(int id) {
+		return jdbcTemplate.update("delete from person where id=?", id);
+	}
+
+	public int insert(Person person) {
+		return jdbcTemplate.update("insert into person (id, name, location, birth_date) values(?, ?, ?, ?)",
+				person.getId(), person.getName(), person.getLocation(), person.getBirthDate());
+	}
+
+	public int update(Person person) {
+		return jdbcTemplate.update("update person set name = ?, location = ?, birth_date = ? where id = ?",
+				person.getName(), person.getLocation(), person.getBirthDate(), person.getId());
+	}
 }

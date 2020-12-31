@@ -7,13 +7,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.sebsonic2o.spring.db.springjdbctojpa.entity.Person;
 import com.sebsonic2o.spring.db.springjdbctojpa.jdbc.PersonJdbcDao;
 
-@SpringBootApplication
-public class SpringJdbcToJpaApplication implements CommandLineRunner {
+// @SpringBootApplication
+public class SpringJdbcDemoApplication implements CommandLineRunner {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -21,7 +20,7 @@ public class SpringJdbcToJpaApplication implements CommandLineRunner {
 	PersonJdbcDao dao;
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringJdbcToJpaApplication.class, args);
+		SpringApplication.run(SpringJdbcDemoApplication.class, args);
 	}
 
 	@Override
